@@ -1,9 +1,11 @@
 import {Configuration} from "webpack";
 import path from "path";
 import {CheckerPlugin} from "awesome-typescript-loader";
+import webpack from "webpack"
 
 const config: Configuration = {
   mode: "development",
+  target: ['web','es5'],
   devServer: {
     contentBase: "./public",
   },
@@ -22,7 +24,11 @@ const config: Configuration = {
     ],
   },
   devtool: "source-map",
-  plugins: [new CheckerPlugin()],
+  plugins: [new CheckerPlugin(),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    })
+  ],
 };
 
 module.exports = config;

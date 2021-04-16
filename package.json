@@ -20,5 +20,8 @@
     "webpack-cli": "latest",
     "webpack-dev-server": "latest",
     "webpack-obfuscator": "^3.2.0"
+  },
+  "dependencies": {
+    "uuidv4": "^6.2.7"
   }
 }
